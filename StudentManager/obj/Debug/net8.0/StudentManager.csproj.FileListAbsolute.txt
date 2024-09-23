@@ -1,0 +1,14 @@
+D:\prn211\StudentManager\StudentManager\bin\Debug\net8.0\StudentManager.exe
+D:\prn211\StudentManager\StudentManager\bin\Debug\net8.0\StudentManager.deps.json
+D:\prn211\StudentManager\StudentManager\bin\Debug\net8.0\StudentManager.runtimeconfig.json
+D:\prn211\StudentManager\StudentManager\bin\Debug\net8.0\StudentManager.dll
+D:\prn211\StudentManager\StudentManager\bin\Debug\net8.0\StudentManager.pdb
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.AssemblyInfoInputs.cache
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.AssemblyInfo.cs
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.csproj.CoreCompileInputs.cache
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.dll
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\refint\StudentManager.dll
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.pdb
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.genruntimeconfig.cache
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\ref\StudentManager.dll
