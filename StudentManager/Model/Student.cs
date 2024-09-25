@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace StudentManager.Model
         public string StudentId { get; set; }
         public string School { get; set; }
         public int StartYear { get; set; }
-        public double GPA { get; set; }  
+        public double GPA { get; set; }
 
         public Student(string studentId, string school, int startYear, double gpa
             , int id, string name, DateTime dateOfBirth, string address, double height, double weight)
@@ -26,30 +27,36 @@ namespace StudentManager.Model
 
         public enum hocLuc
         {
-            Kem,        
-            Yeu,        
-            TrungBinh, 
-            Kha,        
+            Kem,
+            Yeu,
+            TrungBinh,
+            Kha,
             Gioi,
-            XuatSac     
+            XuatSac
 
         }
 
         public static string TinhHocLuc(double gpa)
         {
-            if (gpa < 3)
-                return hocLuc.Kem.ToString();
-            else if (gpa < 5)
-                return hocLuc.Yeu.ToString();
-            else if (gpa < 6.5)
-                return hocLuc.TrungBinh.ToString();
-            else if (gpa < 7.5)
-                return hocLuc.Kha.ToString();
-            else if (gpa < 9)
-                return hocLuc.Gioi.ToString();
-            else
-                return hocLuc.XuatSac.ToString();
+            switch (gpa)
+            {
+                case < 3:
+                    return hocLuc.Kem.ToString();
+                case < 5:
+                    return hocLuc.Yeu.ToString();
+                case < 6.5:
+                    return hocLuc.TrungBinh.ToString();
+                case < 7.5:
+                    return hocLuc.Kha.ToString();
+                case < 9:
+                    return hocLuc.Gioi.ToString();
+                default:
+                    return hocLuc.XuatSac.ToString();
+
+
+
+            }
         }
-      
+
     }
 }

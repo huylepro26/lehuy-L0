@@ -39,52 +39,49 @@ namespace StudentManager.Utils
         {
             while (true)
             {
-                try
+                Console.Write("Enter Id: ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int id))
                 {
-                    Console.Write("Enter Id: ");
-                    int id = int.Parse(Console.ReadLine());
-
-                    if (id <= 0)
+                    if (id > 0)
                     {
-                        throw new ArgumentOutOfRangeException();
+                        return id;
                     }
-
-                    return id;
+                    else
+                    {
+                        Console.WriteLine("ID must be a positive number.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid format. Please enter a valid number.");
                 }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine("ID must be a positive number.");
-                }
             }
         }
+
 
         public DateTime ValidateDateOfBirth()
         {
             while (true)
             {
-                try
+                Console.Write("DOB (yyyy-MM-dd): ");
+                string input = Console.ReadLine();
+
+                if (DateTime.TryParse(input, out DateTime dateOfBirth))
                 {
-                    Console.Write("DOB (yyyy-MM-dd): ");
-                    DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
-
-                    if (dateOfBirth.Year < Constant.dateBirthStart)
+                    if (dateOfBirth.Year >= Constant.dateBirthStart)
                     {
-                        throw new ArgumentException();
+                        return dateOfBirth;
                     }
-
-                    return dateOfBirth;
+                    else
+                    {
+                        Console.WriteLine("Date of birth must be from the year 1900 or later.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid date format. Please use yyyy-MM-dd.");
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("Date of birth must be from the year 1900 or later.");
                 }
             }
         }
@@ -116,81 +113,68 @@ namespace StudentManager.Utils
         {
             while (true)
             {
-                try
+                Console.Write("Height (cm): ");
+                string input = Console.ReadLine();
+
+                if (double.TryParse(input, out double height))
                 {
-                    Console.Write("Height (cm): ");
-                    double height = double.Parse(Console.ReadLine());
-
-                    if (height < Constant.minHeight || height > Constant.maxHeight)
+                    if (height >= Constant.minHeight && height <= Constant.maxHeight)
                     {
-                        throw new ArgumentOutOfRangeException();
+                        return height;
                     }
-
-                    return height;
+                    else
+                    {
+                        Console.WriteLine("Height must be between 50.0 and 300.0 cm.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid format. Please enter a valid number.");
                 }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine("Height must be between 50.0 and 300.0 cm.");
-                }
             }
         }
-
         public double ValidateWeight()
         {
             while (true)
             {
-                try
+                Console.Write("Weight (kg): ");
+                string input = Console.ReadLine();
+
+                if (double.TryParse(input, out double weight))
                 {
-                    Console.Write("Weight (kg): ");
-                    double weight = double.Parse(Console.ReadLine());
-
-                    if (weight < Constant.minWeight || weight > Constant.maxWeight)
+                    if (weight >= Constant.minWeight && weight <= Constant.maxWeight)
                     {
-                        throw new ArgumentOutOfRangeException();
+                        return weight;
                     }
-
-                    return weight;
+                    else
+                    {
+                        Console.WriteLine("Weight must be between 5.0 and 1000.0 kg.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine("Weight must be between 5.0 and 1000.0 kg.");
                 }
             }
         }
 
-        public string ValidateStudentId(HashSet<string> existingIds, bool isDelete = false)
+        public string ValidateStudentId(List<Student> students, bool isDelete = false)
         {
             while (true)
             {
-                try
+                Console.Write("StudentID: ");
+                string studentId = Console.ReadLine();
+
+                // Kiểm tra độ dài của Student ID và tính hợp lệ
+                if (studentId.Length != Constant.studentIdLength ||
+                    (!isDelete && students.Any(s => s.StudentId == studentId)) ||
+                    (isDelete && !students.Any(s => s.StudentId == studentId)))
                 {
-                    Console.Write("StudentID: ");
-                    string studentId = Console.ReadLine();
-
-                    if (studentId.Length != Constant.studentIdLength || (isDelete && !existingIds.Contains(studentId)))
-                    {
-                        throw new ArgumentException();
-                    }
-
-                    if (!isDelete && existingIds.Contains(studentId))
-                    {
-                        throw new ArgumentException();
-                    }
-
-                    return studentId;
+                    Console.WriteLine("Student ID must be exactly 10 characters and unique.");
+                    continue; // Quay lại vòng lặp nếu kiểm tra không hợp lệ
                 }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("Student ID must be exactly 10 characters and not existingId .");
-                }
+
+                return studentId; // Trả về ID hợp lệ
             }
         }
 
@@ -221,25 +205,24 @@ namespace StudentManager.Utils
         {
             while (true)
             {
-                try
+                Console.Write("Start year: ");
+                string input = Console.ReadLine();
+
+
+                if (int.TryParse(input, out int startYear))
                 {
-                    Console.Write("Start year: ");
-                    int startYear = int.Parse(Console.ReadLine());
-
-                    if (startYear < Constant.minstartYear || startYear > DateTime.Now.Year)
+                    if (startYear >= Constant.minstartYear && startYear <= DateTime.Now.Year)
                     {
-                        throw new ArgumentOutOfRangeException(  );
+                        return startYear;
                     }
-
-                    return startYear;
+                    else
+                    {
+                        Console.WriteLine("Start year must be from 1900 to the current year.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid format. Please enter a valid year.");
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine("Start year must be from 1900 to the current year.");
                 }
             }
         }
@@ -248,25 +231,23 @@ namespace StudentManager.Utils
         {
             while (true)
             {
-                try
+                Console.Write("GPA: ");
+                string input = Console.ReadLine();
+
+                if (double.TryParse(input, out double gpa))
                 {
-                    Console.Write("GPA: ");
-                    double gpa = double.Parse(Console.ReadLine());
-
-                    if (gpa < 0.0 || gpa > 10.0)
+                    if (gpa >= 0.0 && gpa <= 10.0)
                     {
-                        throw new ArgumentOutOfRangeException();
+                        return gpa;
                     }
-
-                    return gpa;
+                    else
+                    {
+                        Console.WriteLine("GPA must be between 0.0 and 10.0.");
+                    }
                 }
-                catch (FormatException)
+                else
                 {
                     Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine("GPA must be between 0.0 and 10.0.");
                 }
             }
         }

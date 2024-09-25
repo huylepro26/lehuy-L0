@@ -12,3 +12,4 @@ D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\refint\StudentManager.d
 D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.pdb
 D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.genruntimeconfig.cache
 D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\ref\StudentManager.dll
+D:\prn211\StudentManager\StudentManager\obj\Debug\net8.0\StudentManager.sourcelink.json
