@@ -11,19 +11,20 @@ namespace StudentManager.Main
         private List<Student> students = new List<Student>();
         private int nextId = 1;
         private Validation validation = new Validation();
+        private StudentInput studentInput = new StudentInput();
 
         public void addStudent()
         {
             Console.WriteLine("Add a new student:");
-            string name = validation.ValidateName();
-            DateTime dateOfBirth = validation.ValidateDateOfBirth();
-            string address = validation.ValidateAddress();
-            double height = validation.ValidateHeight();
-            double weight = validation.ValidateWeight();
-            string studentId = validation.ValidateStudentId(students);
-            string school = validation.ValidateSchool();
-            int startYear = validation.ValidateStartYear();
-            double gpa = validation.ValidateGPA();
+            string name = studentInput.getName();
+            DateTime dateOfBirth = studentInput.getDOB();
+            string address = studentInput.getAddress();
+            double height = studentInput.getHeight();
+            double weight = studentInput.getWeight();
+            string studentId = studentInput.getStudentId(students);
+            string school = studentInput.getSchool();
+            int startYear = studentInput.getStartYear();
+            double gpa = studentInput.getGPA();
             int id = CreateId();
             Student student = new Student(studentId, school, startYear, gpa, id, name, dateOfBirth, address, height, weight);
             students.Add(student);
@@ -51,63 +52,60 @@ namespace StudentManager.Main
             }
         }
 
-        public void findStudentById()
+        public Student findStudentById()
         {
             Console.WriteLine("Find a student by ID:");
-            int idToFind = validation.ValidateId();
+            int idToFind = studentInput.getID();
             Student student = students.FirstOrDefault(s => s.Id == idToFind);
 
             if (student != null)
             {
                 Console.WriteLine("Student found:");
                 Console.WriteLine($"{student.Id} {student.Name} {student.DateOfBirth:yyyy-MM-dd} {student.Address} {student.Height} {student.Weight} {student.StudentId} {student.School} {student.StartYear} {student.GPA}");
+                return student;
             }
             else
             {
                 Console.WriteLine("Student not found.");
+                return null;
             }
+
         }
 
-        public void updateStudent()
+
+
+        public void updateStudent(Student studentFound)
         {
-            Console.WriteLine("Update student information:");
-            int idToUpdate = validation.ValidateId();
-            Student studentToUpdate = students.FirstOrDefault(s => s.Id == idToUpdate);
+
+            Student studentToUpdate = studentFound;
 
             if (studentToUpdate != null)
             {
-                studentToUpdate.Name = validation.ValidateName();
-                studentToUpdate.DateOfBirth = validation.ValidateDateOfBirth();
-                studentToUpdate.Address = validation.ValidateAddress();
-                studentToUpdate.Weight = validation.ValidateWeight();
-                studentToUpdate.Height = validation.ValidateHeight();
-                studentToUpdate.School = validation.ValidateSchool();
-                studentToUpdate.StartYear = validation.ValidateStartYear();
-                studentToUpdate.GPA = validation.ValidateGPA();
+                studentToUpdate.Name = studentInput.getName();
+                studentToUpdate.DateOfBirth = studentInput.getDOB();
+                studentToUpdate.Address = studentInput.getAddress();
+                studentToUpdate.Weight = studentInput.getWeight();
+                studentToUpdate.Height = studentInput.getHeight();
+                studentToUpdate.School = studentInput.getSchool();
+                studentToUpdate.StartYear = studentInput.getStartYear();
+                studentToUpdate.GPA = studentInput.getGPA();
                 Console.WriteLine("Update success!");
 
             }
-            else
-            {
-                Console.WriteLine("Student not found.");
-            }
+
         }
 
-        public void deleteStudent()
+        public void deleteStudent(Student studentFound)
         {
-            Console.WriteLine("Deleting a student:");
-            int idToDelete = validation.ValidateId();
-            Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
+
+            Student studentToRemove = studentFound;
 
             if (studentToRemove != null)
             {
                 students.Remove(studentToRemove);
                 Console.WriteLine("Student deleted successfully!");
             }
-            else
-            {
-                Console.WriteLine("Student not found.");
-            }
+
         }
 
         public void ShowStatistics()

@@ -13,16 +13,18 @@ namespace StudentManager.Controller
     internal class Program
     {
         public static List<Student> students = new List<Student>();
-
         static void Main(string[] args)
         {
+
             Validation validation = new Validation();
             StudentManagement student = new StudentManagement();
+            StudentInput studentInput = new StudentInput();
+            Student studentFound ;
 
             while (true)
             {
                 Menu.menuScreen();
-                int choice = int.Parse(Console.ReadLine());
+                int choice = studentInput.getChoice();
 
                 switch (choice)
                 {
@@ -33,10 +35,12 @@ namespace StudentManager.Controller
                         student.findStudentById();
                         break;
                     case 3:
-                        student.updateStudent();
+                         studentFound = student.findStudentById();
+                        student.updateStudent(studentFound);
                         break;
                     case 4:
-                        student.deleteStudent();
+                         studentFound = student.findStudentById();
+                        student.deleteStudent(studentFound);
                         break;
                     case 5:
                         student.showStudent();

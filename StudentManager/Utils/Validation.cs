@@ -1,9 +1,11 @@
 ﻿using StudentManager.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace StudentManager.Utils
 {
@@ -11,245 +13,189 @@ namespace StudentManager.Utils
     {
 
 
-        public string ValidateName()
+        public void ValidateName(string name)
         {
-            while (true)
+            if (string.IsNullOrEmpty(name) || name.Length > Constant.maxLengthName || name.Any(char.IsDigit))
             {
-                try
-                {
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
-
-                    if (string.IsNullOrEmpty(name) || name.Length > Constant.maxLengthName || name.Any(char.IsDigit))
-                    {
-                        throw new ArgumentException();
-                    }
-
-                    return name;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("Name must be non-empty, < than 100 characters," +
-                            " and must not contain digits.");
-                }
-            }
-        }
-
-        public int ValidateId()
-        {
-            while (true)
-            {
-                Console.Write("Enter Id: ");
-                string input = Console.ReadLine();
-
-                if (int.TryParse(input, out int id))
-                {
-                    if (id > 0)
-                    {
-                        return id;
-                    }
-                    else
-                    {
-                        Console.WriteLine("ID must be a positive number.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
+                throw new ArgumentException($"Person name must be < {Constant.maxLengthName} and no digit or null");
             }
         }
 
 
-        public DateTime ValidateDateOfBirth()
+        public void ValidateId(string number)
         {
-            while (true)
-            {
-                Console.Write("DOB (yyyy-MM-dd): ");
-                string input = Console.ReadLine();
 
-                if (DateTime.TryParse(input, out DateTime dateOfBirth))
+            if (int.TryParse(number, out int id))
+            {
+                if (id <= 0)
                 {
-                    if (dateOfBirth.Year >= Constant.dateBirthStart)
-                    {
-                        return dateOfBirth;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Date of birth must be from the year 1900 or later.");
-                    }
+                    throw new ArgumentException("ID must be a positive number.");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid date format. Please use yyyy-MM-dd.");
-                }
+
             }
+            else
+            {
+
+                throw new ArgumentException("Invalid format. Please enter valid number");
+            }
+
         }
 
-        public string ValidateAddress()
+
+        public void ValidateDateOfBirth(string input)
         {
-            while (true)
+            if (DateTime.TryParse(input, out DateTime dateOfBirth))
             {
-                try
+                if (dateOfBirth.Year < Constant.dateBirthStart)
                 {
-                    Console.Write("Address: ");
-                    string address = Console.ReadLine();
+                    throw new ArgumentException($"Date of birth must be from the year {Constant.dateBirthStart} or later.");
 
-                    if (address.Length > Constant.addressLength)
-                    {
-                        throw new ArgumentException();
-                    }
+                }
 
-                    return address;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("Address must be < than 300 characters.");
-                }
             }
+            else
+            {
+
+                throw new ArgumentException("Invalid date format. Please use yyyy-MM-dd.");
+
+            }
+
         }
 
-        public double ValidateHeight()
+        public void ValidateAddress(string address)
         {
-            while (true)
-            {
-                Console.Write("Height (cm): ");
-                string input = Console.ReadLine();
 
-                if (double.TryParse(input, out double height))
-                {
-                    if (height >= Constant.minHeight && height <= Constant.maxHeight)
-                    {
-                        return height;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Height must be between 50.0 and 300.0 cm.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
-            }
-        }
-        public double ValidateWeight()
-        {
-            while (true)
+            if (address.Length > Constant.addressLength)
             {
-                Console.Write("Weight (kg): ");
-                string input = Console.ReadLine();
-
-                if (double.TryParse(input, out double weight))
-                {
-                    if (weight >= Constant.minWeight && weight <= Constant.maxWeight)
-                    {
-                        return weight;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Weight must be between 5.0 and 1000.0 kg.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
+                throw new ArgumentException("Address must be < than 300 characters.");
             }
+
+
+
         }
 
-        public string ValidateStudentId(List<Student> students, bool isDelete = false)
+        public void ValidateHeight(string input)
         {
-            while (true)
-            {
-                Console.Write("StudentID: ");
-                string studentId = Console.ReadLine();
 
-                // Kiểm tra độ dài của Student ID và tính hợp lệ
-                if (studentId.Length != Constant.studentIdLength ||
+            if (double.TryParse(input, out double height))
+            {
+                if (height < Constant.minHeight || height > Constant.maxHeight)
+                {
+                    throw new ArgumentException("Height must be between 50.0 and 300.0 cm.");
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Invalid format. Please enter a valid number.");
+            }
+
+        }
+
+        public void ValidateWeight(string input)
+        {
+
+            if (double.TryParse(input, out double weight))
+            {
+                if (weight < Constant.minWeight || weight > Constant.maxWeight)
+                {
+                    throw new ArgumentException("Weight must be between 5.0 and 1000.0 kg.");
+                }
+
+            }
+            else
+            {
+                throw new ArgumentException("Invalid format. Please enter a valid number.");
+            }
+
+        }
+
+        public void ValidateStudentId(List<Student> students, string studentId)
+        {
+            bool isDelete = false;
+            if (string.IsNullOrEmpty(studentId))
+            {
+
+                throw new ArgumentException("Student ID not null.");
+
+            }
+            else
+            {
+                if (studentId.Length != Constant.studentIdLength || string.IsNullOrEmpty(studentId) ||
                     (!isDelete && students.Any(s => s.StudentId == studentId)) ||
                     (isDelete && !students.Any(s => s.StudentId == studentId)))
                 {
-                    Console.WriteLine("Student ID must be exactly 10 characters and unique.");
-                    continue; // Quay lại vòng lặp nếu kiểm tra không hợp lệ
+                    throw new ArgumentException("Student ID must be exactly 10 characters and not duplicate.");
+
                 }
 
-                return studentId; // Trả về ID hợp lệ
             }
+
         }
 
-        public string ValidateSchool()
+        public void ValidateSchool(string school)
         {
-            while (true)
+            if (string.IsNullOrEmpty(school) || school.Length > Constant.schooNameLength)
             {
-                try
-                {
-                    Console.Write("School: ");
-                    string school = Console.ReadLine();
-
-                    if (string.IsNullOrEmpty(school) || school.Length > Constant.schooNameLength)
-                    {
-                        throw new ArgumentException();
-                    }
-
-                    return school;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine("School must be non-empty and < than 200 characters.");
-                }
+                throw new ArgumentException("School must be non-empty and < than 200 characters.");
             }
+
+
+
         }
 
-        public int ValidateStartYear()
+        public void ValidateStartYear(string input)
         {
-            while (true)
+            if (int.TryParse(input, out int startYear))
             {
-                Console.Write("Start year: ");
-                string input = Console.ReadLine();
-
-
-                if (int.TryParse(input, out int startYear))
+                if (startYear < Constant.minstartYear || startYear > DateTime.Now.Year)
                 {
-                    if (startYear >= Constant.minstartYear && startYear <= DateTime.Now.Year)
-                    {
-                        return startYear;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Start year must be from 1900 to the current year.");
-                    }
+                    throw new ArgumentException("Start year must be from 1900 to the current year.");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid format. Please enter a valid year.");
-                }
+
             }
+            else
+            {
+                throw new ArgumentException("Invalid format. Please enter a valid year.");
+            }
+
         }
 
-        public double ValidateGPA()
+        public void ValidateGPA(string number)
         {
-            while (true)
-            {
-                Console.Write("GPA: ");
-                string input = Console.ReadLine();
 
-                if (double.TryParse(input, out double gpa))
+            if (double.TryParse(number, out double gpa))
+            {
+                if (gpa < 0.0 || gpa > 10.0)
                 {
-                    if (gpa >= 0.0 && gpa <= 10.0)
-                    {
-                        return gpa;
-                    }
-                    else
-                    {
-                        Console.WriteLine("GPA must be between 0.0 and 10.0.");
-                    }
+                    throw new ArgumentException("GPA must be between 0.0 and 10.0.");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid format. Please enter a valid number.");
-                }
+
             }
+            else
+            {
+
+                throw new ArgumentException("Invalid format.Please enter a valid number.");
+            }
+
+        }
+
+        public void ValidateMenuChoice(string number)
+        {
+
+            if (int.TryParse(number, out int choice))
+            {
+                if (choice <= 0 || choice > 8)
+                {
+                    throw new ArgumentException("choice must be between 1-9");
+                }
+
+            }
+            else
+            {
+
+                throw new ArgumentException("Invalid format. Please enter valid number");
+            }
+
         }
     }
 }
