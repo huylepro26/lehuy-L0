@@ -1,6 +1,6 @@
 ﻿using StudentManager.Main;
 using StudentManager.Model;
-using StudentManager.Utils;
+using StudentManager.Validate;
 using StudentManager.Views;
 using System;
 using System.Collections.Generic;
@@ -24,26 +24,26 @@ namespace StudentManager.Controller
             while (true)
             {
                 Menu.menuScreen();
-                int choice = studentInput.getChoice();
+                int choice = studentInput.GetChoice();
 
                 switch (choice)
                 {
                     case 1:
-                        student.addStudent();
+                        student.AddStudent();
                         break;
                     case 2:
-                        student.findStudentById();
+                        student.FindStudentById();
                         break;
                     case 3:
-                         studentFound = student.findStudentById();
-                        student.updateStudent(studentFound);
+                         studentFound = student.FindStudentById();
+                        student.UpdateStudent(studentFound);
                         break;
                     case 4:
-                         studentFound = student.findStudentById();
-                        student.deleteStudent(studentFound);
+                         studentFound = student.FindStudentById();
+                        student.DeleteStudent(studentFound);
                         break;
                     case 5:
-                        student.showStudent();
+                        student.ShowStudent();
                         break;
                     case 6:
                         student.ShowStatistics();

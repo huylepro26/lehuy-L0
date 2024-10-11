@@ -1,16 +1,15 @@
 ﻿using StudentManager.Model;
+using StudentManager.Validate;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudentManager.Utils
+namespace StudentManager.Controller
 {
     public class StudentInput
     {
         Validation validation = new Validation();
-        public string getName()
+
+        public string GetName()
         {
             while (true)
             {
@@ -18,9 +17,8 @@ namespace StudentManager.Utils
                 {
                     Console.Write("Name: ");
                     string name = Console.ReadLine();
-                    validation.ValidateName(name);
+                    validation.CheckName(name);
                     return name;
-
                 }
                 catch (ArgumentException ex)
                 {
@@ -29,28 +27,25 @@ namespace StudentManager.Utils
             }
         }
 
-        public DateTime getDOB()
+        public DateTime GetDOB()
         {
             while (true)
             {
-
                 try
                 {
                     Console.Write("DOB (yyyy-MM-dd): ");
                     string input = Console.ReadLine();
-                    validation.ValidateDateOfBirth(input);
+                    validation.CheckDateOfBirth(input);
                     return DateTime.Parse(input);
-
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine($"{ex.Message}");
                 }
-
             }
         }
 
-        public string getAddress()
+        public string GetAddress()
         {
             while (true)
             {
@@ -58,8 +53,7 @@ namespace StudentManager.Utils
                 {
                     Console.Write("Address: ");
                     string address = Console.ReadLine();
-                    validation.ValidateAddress(address);
-
+                    validation.CheckAddress(address);
                     return address;
                 }
                 catch (ArgumentException ex)
@@ -69,7 +63,7 @@ namespace StudentManager.Utils
             }
         }
 
-        public double getHeight()
+        public double GetHeight()
         {
             while (true)
             {
@@ -77,9 +71,8 @@ namespace StudentManager.Utils
                 {
                     Console.Write("Height (cm): ");
                     string height = Console.ReadLine();
-                    validation.ValidateHeight(height);
+                    validation.CheckHeight(height);
                     return double.Parse(height);
-
                 }
                 catch (ArgumentException ex)
                 {
@@ -88,51 +81,43 @@ namespace StudentManager.Utils
             }
         }
 
-        public double getWeight()
+        public double GetWeight()
         {
             while (true)
             {
-
-
                 try
                 {
                     Console.Write("Weight (kg): ");
                     string weight = Console.ReadLine();
-                    validation.ValidateWeight(weight);
+                    validation.CheckWeight(weight);
                     return double.Parse(weight);
-
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine($"{ex.Message}");
                 }
             }
-
         }
 
-        public string getStudentId(List<Student> students)
+        public string GetStudentId(List<Student> students)
         {
             while (true)
             {
-
                 try
                 {
                     Console.Write("StudentID: ");
                     string studentId = Console.ReadLine();
-                    validation.ValidateStudentId(students, studentId);
+                    validation.CheckStudentId(students, studentId);
                     return studentId;
-
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine($"{ex.Message}");
                 }
-
-
             }
         }
 
-        public string getSchool()
+        public string GetSchool()
         {
             while (true)
             {
@@ -140,9 +125,7 @@ namespace StudentManager.Utils
                 {
                     Console.Write("School: ");
                     string school = Console.ReadLine();
-                    validation.ValidateSchool(school);
-
-
+                    validation.CheckSchool(school);
                     return school;
                 }
                 catch (ArgumentException ex)
@@ -150,22 +133,18 @@ namespace StudentManager.Utils
                     Console.WriteLine($"{ex.Message}");
                 }
             }
-
         }
 
-        public int getStartYear()
+        public int GetStartYear()
         {
             while (true)
             {
-
                 try
                 {
                     Console.Write("Start year: ");
                     string startYear = Console.ReadLine();
-                    validation.ValidateStartYear(startYear);
+                    validation.CheckStartYear(startYear);
                     return int.Parse(startYear);
-
-
                 }
                 catch (ArgumentException ex)
                 {
@@ -174,19 +153,16 @@ namespace StudentManager.Utils
             }
         }
 
-        public double getGPA()
+        public double GetGPA()
         {
             while (true)
             {
-
-
                 try
                 {
                     Console.Write("GPA: ");
                     string gpa = Console.ReadLine();
-                    validation.ValidateGPA(gpa);
+                    validation.CheckGPA(gpa);
                     return double.Parse(gpa);
-
                 }
                 catch (ArgumentException ex)
                 {
@@ -195,18 +171,16 @@ namespace StudentManager.Utils
             }
         }
 
-        public int getID()
+        public int GetID()
         {
             while (true)
             {
-
                 try
                 {
                     Console.Write("Enter Id: ");
-                    string ID = Console.ReadLine();
-                    validation.ValidateId(ID);
-                    return int.Parse(ID);
-
+                    string id = Console.ReadLine();
+                    validation.CheckId(id);
+                    return int.Parse(id);
                 }
                 catch (ArgumentException ex)
                 {
@@ -214,18 +188,17 @@ namespace StudentManager.Utils
                 }
             }
         }
-        public int getChoice()
+
+        public int GetChoice()
         {
             while (true)
             {
-
                 try
                 {
                     Console.Write("Enter choice: ");
                     string choice = Console.ReadLine();
-                    validation.ValidateMenuChoice(choice);
+                    validation.CheckMenuChoice(choice);
                     return int.Parse(choice);
-
                 }
                 catch (ArgumentException ex)
                 {
@@ -233,6 +206,5 @@ namespace StudentManager.Utils
                 }
             }
         }
-
     }
 }

@@ -1,5 +1,6 @@
-﻿using StudentManager.Model;
-using StudentManager.Utils;
+﻿using StudentManager.Controller;
+using StudentManager.Model;
+using StudentManager.Validate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,20 @@ namespace StudentManager.Main
         private Validation validation = new Validation();
         private StudentInput studentInput = new StudentInput();
 
-        public void addStudent()
+        public void AddStudent()
         {
             Console.WriteLine("Add a new student:");
-            string name = studentInput.getName();
-            DateTime dateOfBirth = studentInput.getDOB();
-            string address = studentInput.getAddress();
-            double height = studentInput.getHeight();
-            double weight = studentInput.getWeight();
-            string studentId = studentInput.getStudentId(students);
-            string school = studentInput.getSchool();
-            int startYear = studentInput.getStartYear();
-            double gpa = studentInput.getGPA();
+            string name = studentInput.GetName();
+            DateTime dateOfBirth = studentInput.GetDOB();
+            string address = studentInput.GetAddress();
+            double height = studentInput.GetHeight();
+            double weight = studentInput.GetWeight();
+            string studentId = studentInput.GetStudentId(students);
+            string school = studentInput.GetSchool();
+            int startYear = studentInput.GetStartYear();
+            double gpa = studentInput.GetGPA();
             int id = CreateId();
+
             Student student = new Student(studentId, school, startYear, gpa, id, name, dateOfBirth, address, height, weight);
             students.Add(student);
 
@@ -37,7 +39,7 @@ namespace StudentManager.Main
             return nextId++;
         }
 
-        public void showStudent()
+        public void ShowStudent()
         {
             Console.WriteLine("List of students:");
             if (students.Count == 0)
@@ -52,10 +54,10 @@ namespace StudentManager.Main
             }
         }
 
-        public Student findStudentById()
+        public Student FindStudentById()
         {
             Console.WriteLine("Find a student by ID:");
-            int idToFind = studentInput.getID();
+            int idToFind = studentInput.GetID();
             Student student = students.FirstOrDefault(s => s.Id == idToFind);
 
             if (student != null)
@@ -69,43 +71,32 @@ namespace StudentManager.Main
                 Console.WriteLine("Student not found.");
                 return null;
             }
-
         }
 
-
-
-        public void updateStudent(Student studentFound)
+        public void UpdateStudent(Student studentFound)
         {
-
-            Student studentToUpdate = studentFound;
-
-            if (studentToUpdate != null)
+            if (studentFound != null)
             {
-                studentToUpdate.Name = studentInput.getName();
-                studentToUpdate.DateOfBirth = studentInput.getDOB();
-                studentToUpdate.Address = studentInput.getAddress();
-                studentToUpdate.Weight = studentInput.getWeight();
-                studentToUpdate.Height = studentInput.getHeight();
-                studentToUpdate.School = studentInput.getSchool();
-                studentToUpdate.StartYear = studentInput.getStartYear();
-                studentToUpdate.GPA = studentInput.getGPA();
+                studentFound.Name = studentInput.GetName();
+                studentFound.DateOfBirth = studentInput.GetDOB();
+                studentFound.Address = studentInput.GetAddress();
+                studentFound.Weight = studentInput.GetWeight();
+                studentFound.Height = studentInput.GetHeight();
+                studentFound.School = studentInput.GetSchool();
+                studentFound.StartYear = studentInput.GetStartYear();
+                studentFound.GPA = studentInput.GetGPA();
+
                 Console.WriteLine("Update success!");
-
             }
-
         }
 
-        public void deleteStudent(Student studentFound)
+        public void DeleteStudent(Student studentFound)
         {
-
-            Student studentToRemove = studentFound;
-
-            if (studentToRemove != null)
+            if (studentFound != null)
             {
-                students.Remove(studentToRemove);
+                students.Remove(studentFound);
                 Console.WriteLine("Student deleted successfully!");
             }
-
         }
 
         public void ShowStatistics()
@@ -117,7 +108,7 @@ namespace StudentManager.Main
                                          SoLuong = g.Count()
                                      });
 
-            Console.WriteLine("hoc luc cac sinh vien:");
+            Console.WriteLine("hoc luc cua cac sinh vien:");
             foreach (var stat in statistics)
             {
                 Console.WriteLine($"hoc luc: {stat.HocLuc}, so luong: {stat.SoLuong}");
@@ -130,7 +121,7 @@ namespace StudentManager.Main
                                          .ThenBy(s => s.Name)
                                          .ToList();
 
-            Console.WriteLine("danh sach cac sinh vien :");
+            Console.WriteLine("danh sach sinh vien :");
             foreach (var student in sortedStudents)
             {
                 Console.WriteLine($"ten: {student.Name}, hoc luc: {Student.TinhHocLuc(student.GPA)}");

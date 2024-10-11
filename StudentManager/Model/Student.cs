@@ -52,9 +52,6 @@ namespace StudentManager.Model
                     return hocLuc.Gioi.ToString();
                 default:
                     return hocLuc.XuatSac.ToString();
-
-
-
             }
         }
 

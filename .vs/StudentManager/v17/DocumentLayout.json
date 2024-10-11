@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "D:\\prn211\\StudentManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\utils\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\utils\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|d:\\prn211\\studentmanager\\studentmanager\\controller\\studentinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controller\\studentinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\utils\\studentinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\utils\\studentinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|d:\\prn211\\studentmanager\\studentmanager\\controller\\studentmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\controller\\studentmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controller\\studentmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\controller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\validate\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\validate\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\utils\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\utils\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\controller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controller\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\model\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73652CE3-A9C0-40E9-807D-A6E63F4028CB}|StudentManager\\StudentManager.csproj|D:\\prn211\\StudentManager\\studentmanager\\views\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -79,51 +79,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentInput.cs",
-              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\StudentInput.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Utils\\StudentInput.cs",
-              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\StudentInput.cs",
-              "RelativeToolTip": "StudentManager\\Utils\\StudentInput.cs",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAowO4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T02:48:15.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Validation.cs",
-              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Validation.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Utils\\Validation.cs",
-              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Validation.cs",
-              "RelativeToolTip": "StudentManager\\Utils\\Validation.cs",
-              "ViewState": "AQIAAKcAAAAAAAAAAAAowLQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T13:21:29.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\Program.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Controller\\Program.cs",
-              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\Program.cs",
-              "RelativeToolTip": "StudentManager\\Controller\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAYwCUAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T03:54:26.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "StudentManagement.cs",
               "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\StudentManagement.cs",
               "RelativeDocumentMoniker": "StudentManager\\Controller\\StudentManagement.cs",
               "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\StudentManagement.cs",
               "RelativeToolTip": "StudentManager\\Controller\\StudentManagement.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAgwHoAAABXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T13:23:31.92Z",
               "EditorCaption": ""
@@ -131,38 +92,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Constant.cs",
-              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Constant.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Utils\\Constant.cs",
-              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Constant.cs",
-              "RelativeToolTip": "StudentManager\\Utils\\Constant.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T04:21:11.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Person.cs",
-              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Person.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Model\\Person.cs",
-              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Person.cs",
-              "RelativeToolTip": "StudentManager\\Model\\Person.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T13:21:13.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Student.cs",
               "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Student.cs",
               "RelativeDocumentMoniker": "StudentManager\\Model\\Student.cs",
               "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Student.cs",
               "RelativeToolTip": "StudentManager\\Model\\Student.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAuwDAAAAAbAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAowDUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T13:20:59.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Constant.cs",
+              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Constant.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Utils\\Constant.cs",
+              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Utils\\Constant.cs",
+              "RelativeToolTip": "StudentManager\\Utils\\Constant.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T04:21:11.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Validation.cs",
+              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Validate\\Validation.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Validate\\Validation.cs",
+              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Validate\\Validation.cs",
+              "RelativeToolTip": "StudentManager\\Validate\\Validation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T13:21:29.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\Program.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Controller\\Program.cs",
+              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\Program.cs",
+              "RelativeToolTip": "StudentManager\\Controller\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAjwC0AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T03:54:26.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentInput.cs",
+              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\StudentInput.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Controller\\StudentInput.cs",
+              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Controller\\StudentInput.cs",
+              "RelativeToolTip": "StudentManager\\Controller\\StudentInput.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAQwC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T02:48:15.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Person.cs",
+              "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Person.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Model\\Person.cs",
+              "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Model\\Person.cs",
+              "RelativeToolTip": "StudentManager\\Model\\Person.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T13:21:13.249Z"
             },
             {
               "$type": "Document",
@@ -172,14 +172,14 @@
               "RelativeDocumentMoniker": "StudentManager\\Views\\Menu.cs",
               "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\Views\\Menu.cs",
               "RelativeToolTip": "StudentManager\\Views\\Menu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T13:22:12.532Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "StudentManager",
+              "Title": "StudentManager.csproj",
               "DocumentMoniker": "D:\\prn211\\StudentManager\\StudentManager\\StudentManager.csproj",
               "RelativeDocumentMoniker": "StudentManager\\StudentManager.csproj",
               "ToolTip": "D:\\prn211\\StudentManager\\StudentManager\\StudentManager.csproj",
